@@ -4,7 +4,7 @@ version = "0.2.0"
 description = "Privetstvie"
 authors = ["Dimaslukas <lukin_dima@mail.ru>"]
 packages = [
-  { include = "Brain_games" },
+  { include = "brain_games" },
 ]
 
 [tool.poetry.dependencies]
@@ -14,7 +14,7 @@ prompt = "^0.4.1"
 [tool.poetry.dev-dependencies]
 
 [tool.poetry.scripts]
-brain-games = "Brain_games.scripts.brain_games:main"
+brain-games = "brain_games.scripts.brain_games:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
