@@ -1,4 +1,3 @@
-from random import randint
 import prompt
 
 
@@ -10,47 +9,29 @@ def welcome_user():
     return name
 
 
-def correct_answer(number_for_user):
-    '''function checks if generated int number is even or
-       not and makes return yes or no'''
-    return 'no' if number_for_user % 2 else 'yes'
+def check_answer(user_answer, result):
+    ''' Check for correct answer'''
+    if user_answer == result:
+        print('Correct!')
+        return (True)
+    else:
+        print(f"{user_answer} is wrong answer; (. Correct answer was {result}.")
+        return (False)
 
 
-def make_question():
-    '''function creates random int number from 0 to 100
-       and ask user to give answer '''
-    number_for_user = randint(1, 100)
-    question = print(f'Question: {number_for_user}')
-    answer = correct_answer(number_for_user)
-    return (question, answer)
-
-
-def check_answer(user_answer, correct_answer):
-    '''function checks user answer vs correct answer'''
-    if user_answer == correct_answer:
-        message = 'Correct!'
-        return (True, message)
-    message = f'{user_answer} is wrong answer; (. Correct answer was {correct_answer}.'
-    return (False, message)
-
-
-def play_brain_even():
-    '''function for starting game process'''
+def play_game(Uniq_game_message, question_for_user):
+    ''' 3 rounds of game and last messages for user'''
     name = welcome_user()
-    print('')
-    print('Answer "yes" if the number is even, otherwise answer "no".')
+    print(Uniq_game_message)
     number_of_games = 1
     while number_of_games <= 3:
-        question, answer = make_question()
-        user_answer = input('Your answer: ')
-        correct, message = check_answer(user_answer, answer)
-        if correct:
-            print(message)
+        result, user_answer = question_for_user()
+        checked_answer = check_answer(user_answer, result)
+        if checked_answer:
             if number_of_games == 3:  # check if it is last game
                 print(f'Congratulations! {name}')
+                break
             number_of_games += 1
         else:
-            print(message)
-            print('')
-            print(f"Let's try again, {name}!")
+            print(f"Let's try again {name}!")
             break
