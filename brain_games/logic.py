@@ -29,9 +29,9 @@ def play_game(Uniq_game_message, question_for_user):
         checked_answer = check_answer(user_answer, result)
         if checked_answer:
             if number_of_games == 3:  # check if it is last game
-                print(f'Congratulations! {name}')
+                print(f'Congratulations, {name}!')
                 break
             number_of_games += 1
         else:
-            print(f"Let's try again {name}!")
+            print(f"Let's try again, {name}!")
             break
