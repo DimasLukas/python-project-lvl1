@@ -2,7 +2,7 @@ import prompt
 
 
 def welcome_user():
-    '''function makes greeting and asks for username'''
+    """function makes greeting and asks for username"""
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
@@ -20,7 +20,7 @@ def check_answer(user_answer, result):
 
 
 def play_game(Uniq_game_message, question_for_user):
-    ''' 3 rounds of game and last messages for user'''
+    """ 3 rounds of game and last messages for user"""
     name = welcome_user()
     print(Uniq_game_message)
     number_of_games = 1
