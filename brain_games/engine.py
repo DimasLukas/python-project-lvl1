@@ -10,7 +10,7 @@ def play_game(game):
     rounds = 1
     for rounds in range(NUMBER_OF_GAMES):
         question, true_answer = game.generate_question_and_true_answer()
-        print(f"Question:  {question}")
+        print(f"Question: {question}")
         user_answer = prompt.string('Your answer: ')
 
         if user_answer == true_answer:
