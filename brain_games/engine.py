@@ -8,7 +8,7 @@ def play_game(game):
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
     print(game.GAME_RULES)
-    for i in range(NUMBER_OF_ROUNDS):
+    for _ in range(NUMBER_OF_ROUNDS):
         question, right_answer = \
             game.generate_question_and_right_answer()
         print(f"Question: {question}")
@@ -16,7 +16,6 @@ def play_game(game):
 
         if user_answer == right_answer:
             print('Correct!')
-            i += 1
         else:
             print(f"{user_answer} is wrong answer; "
                   f"(. Correct answer was {right_answer}.")

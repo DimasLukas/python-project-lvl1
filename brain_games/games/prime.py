@@ -3,12 +3,12 @@ GAME_RULES = 'Answer "yes" if given number is prime. ' \
              'Otherwise answer "no".'
 
 
-def is_prime(random_element):
+def is_prime(number):
     '''check if number is prime or not'''
-    if random_element <= 1:
+    if number <= 1:
         return False
-    for i in range(2, int(random_element ** 0.5) + 1):
-        if random_element % i == 0:
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
             return False
     return True
 
